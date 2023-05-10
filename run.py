@@ -36,3 +36,10 @@ def check_guess(word, guess):
 
     print(' '.join(feedback))
     return guess == word
+
+def play_wordle():
+    print("Welcome to Wordle!")
+    print("Guess the five-letter word.")
+
+    word = generate_word()
+    attempts = 0
