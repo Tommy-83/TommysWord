@@ -43,3 +43,13 @@ def play_wordle():
 
     word = generate_word()
     attempts = 0
+
+    while attempts < 6:
+        guess = input("Enter your guess: ").lower()
+
+        if check_guess(word, guess):
+            print("Congratulations! You guessed the word.")
+            return
+
+        attempts += 1
+        print(f"Attempt {attempts} out of 6")
