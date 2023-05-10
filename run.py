@@ -1,4 +1,5 @@
 import random
+import colorama
 from colorama import init, Fore, Style
 
 init() #Initialise colorama
@@ -56,3 +57,5 @@ def play_wordle():
 
     print("Game over! You did not guess the word.")
     print(f"The word was: {word}")
+
+play_wordle()
