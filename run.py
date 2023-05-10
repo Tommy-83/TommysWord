@@ -17,3 +17,12 @@ def check_guess(word, guess):
 
     correct_letters = []
     misplaced_letters = []
+
+    for i in range(len(word)):
+        if word[i] == guess[i]:
+            correct_letters.append(guess[i])
+        elif guess[i] in word:
+            misplaced_letters.append(guess[i])
+
+    correct_letters_str = ''.join(correct_letters)
+    misplaced_letters_str = ''.join(misplaced_letters)
