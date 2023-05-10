@@ -18,7 +18,18 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 7. After six attempts, the game will end, and the correct word will be revealed.
 8. You will have the option to play again or exit.
 
+## Testing
+
+The Wordle game was tested to ensure its functionality. The following areas were tested:
+
+- **Guess Validation**: Test that the game correctly validates the length of the guess and rejects guesses that are not five letters long.
+- **Feedback Generation**: Test that the game generates the appropriate feedback based on the guess and the target word.
+- **Winning Condition**: Test that the game correctly identifies when the player has guessed the word and ends the game.
+- **Losing Condition**: Test that the game correctly ends after six unsuccessful attempts and reveals the correct word.
+- **Play Again Option**: Test that the game allows the player to play again or exit after each game.
+
 ## Deployment
+
 ### The project was deployed using Code Institutes mock terminal for Heroku.
 
 ### Steps to deploy:
