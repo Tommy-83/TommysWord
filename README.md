@@ -18,30 +18,23 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 7. After six attempts, the game will end, and the correct word will be revealed.
 8. You will have the option to play again or exit.
 
-## Game flow:
+## Deployment
+### The project was deployed using Code Institutes mock terminal for Heroku.
 
-```mermaid
-graph LR
-    A((Start)) --> B[Generate a random 5-letter word]
-    B --> C[Set attempts = 0]
-    C --> D[Set guessed_words = []]
-    D --> E{attempts < 6}
-    E -- Yes --> F[Display "Enter your guess:"]
-    F --> G[Read player's guess]
-    G --> H[Add guess to guessed_words]
-    H --> I{guess is correct?}
-    I -- Yes --> J[Display "Congratulations! You guessed the word."]
-    J --> K[Break out of the loop]
-    I -- No --> L[Increment attempts by 1]
-    L --> M[Display "Attempt x out of 6"]
-    M --> N{attempts = 6}
-    N -- Yes --> O[Display "Game over! You did not guess the word."]
-    O --> P[Display "The word was: <word>"]
-    P --> Q[Display "Guessed Words:"]
-    Q --> R[Loop through guessed_words and display each word]
-    R --> S[Ask player if they want to play again]
-    S -- Yes --> A
-    S -- No --> T((End))
+### Steps to deploy:
+* Fork or clone this repository.
+* Ensure the Procfile is in place.
+  requirements.txt can be left empty as this project does not use any external libraries.
+* Create a new app in Heroku.
+* Select "New" and "Create new app".
+* Name the new app and click "Create new app".
+* In "Settings" select "BuildPack" and select Python and Node.js. (Python must be at the top of the list).
+* Whilst still in "Settings", click "Reveal Config Vars" and input the folloing. KEY: PORT, VALUE: 8000. Nothing else is needed here as this 
+  project does not have any sensitive files.
+* Click on "Deploy" and select your deploy method and repository.
+* Click "Connect" on selected repository.
+* Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section.
+* Heroku will now deploy the site.
 
 
 
