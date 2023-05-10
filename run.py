@@ -1,6 +1,7 @@
 import random
 import colorama
-from colorama import init, Fore, Style
+from colorama import Fore, Style
+colorama.init()
 
 init() #Initialise colorama
 
