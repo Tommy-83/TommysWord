@@ -18,15 +18,27 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 7. After six attempts, the game will end, and the correct word will be revealed.
 8. You will have the option to play again or exit.
 
+## User Experience
+
+The Wordle game provides an engaging and interactive experience for players. With its simple rules and intuitive interface, players can quickly grasp the concept and start playing. Here are some key features of the user experience:
+
+- **Interactive Guessing**: Players are prompted to enter their guesses and receive immediate feedback on each guess. The colored letters make it visually appealing and help players understand the correctness of their guesses.
+
+- **Limited Attempts**: The game limits players to six attempts, creating a sense of challenge and urgency. This adds excitement and encourages players to strategize and make the best use of their guesses.
+
+- **Play Again Option**: After each game, players have the choice to play again or exit. This allows for multiple rounds of gameplay without the need to restart the program, providing a seamless and convenient experience.
+
+- **Visible Guessed Words**: The game keeps track of all guessed words and displays them at the end. This feature enables players to review their attempts and track their progress.
+
 ## Testing
 
 The Wordle game was tested to ensure its functionality. The following areas were tested:
 
-- **Guess Validation**: Test that the game correctly validates the length of the guess and rejects guesses that are not five letters long.
-- **Feedback Generation**: Test that the game generates the appropriate feedback based on the guess and the target word.
-- **Winning Condition**: Test that the game correctly identifies when the player has guessed the word and ends the game.
-- **Losing Condition**: Test that the game correctly ends after six unsuccessful attempts and reveals the correct word.
-- **Play Again Option**: Test that the game allows the player to play again or exit after each game.
+- **Guess Validation**: Tested that the game correctly validates the length of the guess and rejects guesses that are not five letters long.
+- **Feedback Generation**: Tested that the game generates the appropriate feedback based on the guess and the target word.
+- **Winning Condition**: Tested that the game correctly identifies when the player has guessed the word and ends the game.
+- **Losing Condition**: Tested that the game correctly ends after six unsuccessful attempts and reveals the correct word.
+- **Play Again Option**: Tested that the game allows the player to play again or exit after each game.
 
 ## Deployment
 
