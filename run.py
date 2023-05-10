@@ -26,3 +26,13 @@ def check_guess(word, guess):
 
     correct_letters_str = ''.join(correct_letters)
     misplaced_letters_str = ''.join(misplaced_letters)
+
+    feedback = [
+        f'{Fore.GREEN}{char}{Style.RESET_ALL}' if char in correct_letters else
+        f'{Fore.YELLOW}{char}{Style.RESET_ALL}' if char in misplaced_letters else
+        f'{Fore.RED}_'
+        for char in guess
+    ]
+
+    print(' '.join(feedback))
+    return guess == word
