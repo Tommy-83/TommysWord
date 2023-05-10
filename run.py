@@ -2,7 +2,15 @@ import random
 from termcolor import colored
 
 def generate_word():
-    words = ['apple', 'banana', 'cherry', 'grape', 'melon', 'peach', 'pear', 'plum']
+    words = ["stove", "grape", "apple", "honey", "flame", "table", "fence", "lucky", "scent", "novel",
+"chess", "frost", "wrist", "juice", "waste", "virus", "sweep", "beard", "shaft", "shock",
+"brick", "beast", "sight", "curse", "treat", "charm", "yield", "frown", "horse", "spoil",
+"bless", "bonus", "queen", "river", "sweat", "braid", "grasp", "blend", "cliff", "crane",
+"shelf", "doubt", "rider", "bunch", "nurse", "vital", "tiger", "trick", "wool", "cabin",
+"flash", "sweep", "grill", "drain", "blame", "sting", "curve", "lemon", "spear", "steak",
+"wrist", "plaza", "prize", "swamp", "glory", "stool", "angel", "ocean", "black", "stair",
+"shirt", "chair", "craft", "shade", "steel", "roast", "order", "proud", "thief", "broom"
+ ]
     five_letter_words = [word for word in words if len(word) == 5]
     return random.choice(five_letter_words)
 
