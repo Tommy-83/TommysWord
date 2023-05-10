@@ -53,3 +53,6 @@ def play_wordle():
 
         attempts += 1
         print(f"Attempt {attempts} out of 6")
+
+    print("Game over! You did not guess the word.")
+    print(f"The word was: {word}")
