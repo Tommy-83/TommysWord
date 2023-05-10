@@ -10,3 +10,10 @@ def generate_word():
         # ... (add more words here)
     ]
     return random.choice(words)
+
+def check_guess(word, guess):
+    if len(guess) != len(word):
+        return False
+
+    correct_letters = []
+    misplaced_letters = []
