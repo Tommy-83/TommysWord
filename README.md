@@ -18,5 +18,32 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 7. After six attempts, the game will end, and the correct word will be revealed.
 8. You will have the option to play again or exit.
 
-## Example Output
+##Game flow:
+
+##Start
+*Generate a random 5-letter word
+*Set attempts = 0
+*Set guessed_words = []
+
+###Loop while attempts < 6
+│1. Display "Enter your guess:"
+│   *Read player's guess
+│    *Add guess to guessed_words
+│       **If guess is correct
+│   │    **Display "Congratulations! You guessed the word."
+│   │      **Break out of the loop
+│   ├─ Increment attempts by 1
+│   ├─ Display "Attempt x out of 6"
+│   └─ If attempts = 6
+│       ├─ Display "Game over! You did not guess the word."
+│       └─ Display "The word was: <word>"
+└─ Display "Guessed Words:"
+    └─ Loop through guessed_words and display each word
+    └─ Ask player if they want to play again
+        ├─ If player chooses to play again
+        │   └─ Go back to Start
+        └─ If player chooses to exit
+            └─ End
+
+
 
