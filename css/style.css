@@ -1,36 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tommys Wordle">
-    <title>Tommys Wordle</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-</head>
-<body>
-  <h1>Wordle Game</h1>
-
-  <div class="game-container">
-    <div class="word-container">
-      <div class="letter" id="letter-0"></div>
-      <div class="letter" id="letter-1"></div>
-      <div class="letter" id="letter-2"></div>
-      <div class="letter" id="letter-3"></div>
-      <div class="letter" id="letter-4"></div>
-      </div>
-      <div class="guess-container">
-        <input type="text" id="guess-input" placeholder="Enter your guess">
-        <button id="guess-button">Guess</button>
-      </div>
-      <div class="attempts-container">
-        <p>Attempts Remaining: <span id="attempts">5</span></p>
-      </div>
-      <div id="message-container">
-        <p id="message"></p>
-        <button id="play-again-button">Play Again</button>
-      </div>
-    </div>
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
   
-    <script src="script.js"></script>
-  </body>
-  </html>  
+  h1 {
+    color: #333;
+  }
+  
+  .game-container {
+    margin: 50px auto;
+    max-width: 400px;
+  }
+  
+  .word-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
