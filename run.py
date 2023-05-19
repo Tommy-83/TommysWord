@@ -73,4 +73,5 @@ hidden_word = ''
 attempts = 6
 
 if __name__ == '__main__':
+    app.run()
    
