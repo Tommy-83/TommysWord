@@ -17,3 +17,35 @@ body {
     justify-content: center;
     margin-bottom: 20px;
   }
+
+  .letter {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .guess-container {
+    margin-bottom: 20px;
+  }
+  
+  #guess-input {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  #guess-button {
+    padding: 5px 10px;
+  }
+  
+  .attempts-container {
+    color: #777;
+  }
+  
+  #message-container {
+    margin-top: 20px;
+  }
+  
+  #play-again-button {
+    padding: 5px 10px;
+  }
