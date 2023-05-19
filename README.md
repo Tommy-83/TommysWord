@@ -34,27 +34,28 @@ The Wordle game provides an engaging and interactive experience for players. Wit
 
 The Wordle game was tested to ensure its functionality. The following areas were tested:
 
-* Test New Game Creation:
+1. Test New Game Creation:
 
-** Verify that a new game can be created successfully.
-** Confirm that a new word is generated for each new game.
-** Ensure that the game state is initialized correctly, with the correct number of attempts remaining and a clear representation of the hidden word.
-* Test Word Guessing:
+* Verify that a new game can be created successfully.
+* Confirm that a new word is generated for each new game.
+* Ensure that the game state is initialized correctly, with the correct number of attempts remaining and a clear representation of the hidden word.
 
-** Validate that the player can input their guesses for the hidden word.
-** Verify that the game provides the appropriate feedback on the correctness of each guess.
-** Test scenarios with correct letters in the correct and incorrect positions to ensure accurate feedback.
+2. Test Word Guessing:
 
-* Test Game Progress and Tracking:
+* Validate that the player can input their guesses for the hidden word.
+* Verify that the game provides the appropriate feedback on the correctness of each guess.
+* Test scenarios with correct letters in the correct and incorrect positions to ensure accurate feedback.
 
-** Verify that the game correctly tracks the number of attempts made by the player.
-** Confirm that the game accurately counts and displays the number of correct letters guessed.
-** Test scenarios where the player has guessed all correct letters but not in the correct order to ensure accurate progress tracking.
+3. Test Game Progress and Tracking:
 
-* Test Game Ending:
-** Verify that the game ends correctly when the player runs out of attempts without guessing the word correctly.
-** Confirm that the game displays the correct end-of-game message or notification.
-** Test scenarios where the player exhausts all attempts and ensure the game does not allow further input or gameplay.
+* Verify that the game correctly tracks the number of attempts made by the player.
+* Confirm that the game accurately counts and displays the number of correct letters guessed.
+* Test scenarios where the player has guessed all correct letters but not in the correct order to ensure accurate progress tracking.
+
+4. Test Game Ending:
+* Verify that the game ends correctly when the player runs out of attempts without guessing the word correctly.
+* Confirm that the game displays the correct end-of-game message or notification.
+* Test scenarios where the player exhausts all attempts and ensure the game does not allow further input or gameplay.
 
 ## Deployment
 
