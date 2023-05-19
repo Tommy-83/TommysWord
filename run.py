@@ -1,5 +1,8 @@
+from flask import Flask, render_template, request, jsonify
 import random
 from termcolor import colored
+
+app = Flask(__name__)
 
 def generate_word():
     words = ["stove", "grape", "apple", "honey", "flame", "table", "fence", "lucky", "scent", "novel",
@@ -30,43 +33,52 @@ def check_guess(word, guess):
         else:
             feedback.append(colored('_', 'red'))
 
-    print(' '.join(feedback))
+    return ' '.join(feedback)
 
-    if correct_letters == len(word):
-        return True
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    return False
+@app.route('/guess', methods=['POST'])
+def guess():
+    global hidden_word, attempts, playing
 
-def play_wordle():
-    print("Welcome to Wordle!")
-    print("Guess the five-letter word.")
+    guess_input = request.form['guess']
+    attempts -= 1
 
-    while True:
-        word = generate_word()
-        attempts = 0
-        guessed_words = []
+    response = {
+        'attempts': attempts,
+        'correct': False,
+        'feedback': check_guess(hidden_word, guess_input),
+        'message': ''
+    }
 
-        while attempts < 6:
-            guess = input("Enter your guess: ").lower()
-            guessed_words.append(guess)
+    if check_guess(hidden_word, guess_input) == hidden_word:
+        response['correct'] = True
+        response['game_over'] = True
+        response['message'] = f"Congratulations! You guessed the word '{hidden_word}' in {6 - attempts + 1} attempts."
+        playing = False
+    elif attempts == 0:
+        response['game_over'] = True
+        response['message'] = f"Game over! You did not guess the word. The word was '{hidden_word}'."
+        playing = False
 
-            if check_guess(word, guess):
-                print("Congratulations! You guessed the word.")
-                break
+    return jsonify(response)
 
-            attempts += 1
-            print(f"Attempt {attempts} out of 6")
+@app.route('/play-again', methods=['POST'])
+def play_again():
+    global hidden_word, attempts, playing
 
-        if attempts == 6:
-            print("Game over! You did not guess the word.")
-            print(f"The word was: {word}")
+    hidden_word = generate_word()
+    attempts = 6
+    playing = True
 
-        print("\nGuessed Words:")
-        for word in guessed_words:
-            print(word)
+    return jsonify({'playing': playing})
 
-        play_again = input("Do you want to play again? (yes/no): ").lower()
-        if play_again != "yes":
-            break
+hidden_word = ''
+attempts = 6
+playing = True
 
-play_wordle()
+if __name__ == '__main__':
+    hidden_word = generate_word()
+    app.run()
