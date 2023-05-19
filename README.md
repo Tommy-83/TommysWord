@@ -34,11 +34,27 @@ The Wordle game provides an engaging and interactive experience for players. Wit
 
 The Wordle game was tested to ensure its functionality. The following areas were tested:
 
-- **Guess Validation**: Tested that the game correctly validates the length of the guess and rejects guesses that are not five letters long.
-- **Feedback Generation**: Tested that the game generates the appropriate feedback based on the guess and the target word.
-- **Winning Condition**: Tested that the game correctly identifies when the player has guessed the word and ends the game.
-- **Losing Condition**: Tested that the game correctly ends after six unsuccessful attempts and reveals the correct word.
-- **Play Again Option**: Tested that the game allows the player to play again or exit after each game.
+* Test New Game Creation:
+
+** Verify that a new game can be created successfully.
+** Confirm that a new word is generated for each new game.
+** Ensure that the game state is initialized correctly, with the correct number of attempts remaining and a clear representation of the hidden word.
+* Test Word Guessing:
+
+** Validate that the player can input their guesses for the hidden word.
+** Verify that the game provides the appropriate feedback on the correctness of each guess.
+** Test scenarios with correct letters in the correct and incorrect positions to ensure accurate feedback.
+
+* Test Game Progress and Tracking:
+
+** Verify that the game correctly tracks the number of attempts made by the player.
+** Confirm that the game accurately counts and displays the number of correct letters guessed.
+** Test scenarios where the player has guessed all correct letters but not in the correct order to ensure accurate progress tracking.
+
+* Test Game Ending:
+** Verify that the game ends correctly when the player runs out of attempts without guessing the word correctly.
+** Confirm that the game displays the correct end-of-game message or notification.
+** Test scenarios where the player exhausts all attempts and ensure the game does not allow further input or gameplay.
 
 ## Deployment
 
