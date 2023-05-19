@@ -11,7 +11,7 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 
 1. Clone the repository or download the source code.
 2. Install the termcolor package using `pip install termcolor`.
-3. Run the `wordle.py` file using Python: `python wordle.py`.
+3. Run the `run.py` file using Python: `python run.py`.
 4. The game will start, and you will be prompted to enter your guesses.
 5. Guess the five-letter word within six attempts.
 6. For each guess, the feedback will be displayed, indicating correct and misplaced letters.
