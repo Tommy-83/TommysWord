@@ -20,6 +20,13 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 2. The game is design to accept only 5 letter guesses, showing the error message if that requirement is not met:
 * ![Length Issue Message](/assets/img/wrongLength.png)
 
+3. To add an extra element of excitement the game has a built in 3 minute timer after which the guess will shown and out of time message will appear.
+* ![Out of Time Message](/assets/img/OutOfTime.png)
+
+4. The player only has 6 attempts to get the word correct. If the attempts are exceedede the game will stop and show the secret word.
+
+* ![out of attempts](/assets/img/outOfAttempts.png)
+
 ## How to Play
 
 1. Clone the repository or download the source code.
