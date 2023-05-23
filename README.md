@@ -81,6 +81,24 @@ The Wordle game was tested to ensure its functionality. The following areas were
 * Confirm that the game displays the correct end-of-game message or notification.
 * Test scenarios where the player exhausts all attempts and ensure the game does not allow further input or gameplay.
 
+## Online Resources:
+* [freeCodeCamp](https://www.freecodecamp.org/news/building-a-wordle-game/)
+* [Jacob Lower](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTkzTFBZQVZDVEZTLUZSb3p3Y3RRaDdlbzlFd3xBQ3Jtc0tudENESlo5LU9mczdid3liQXZjeU5QcHNBY0hEVkFYRHJyWjdPVnVMZ3ZUUzFab3NiVWxMUjEtY3BxQ3RMelBrVlU5X1hnSE1xamtONzByQ1pZd2RqS1NUbUZoWWFrUm52U2ZmYU8xRU5CQ3NlUHpyYw&q=https%3A%2F%2Freplit.com%2F%40JacobLower3%2Fwordle-tutorial&v=NCgN4qtbh2Q)
+* [Coding Nepal](https://www.codingnepalweb.com/build-memory-card-game-html-javascript/)
+* [Stack Overflow](https://stackoverflow.com/questions/12206014/css-text-shadow)
+* [Code With Burt](https://www.youtube.com/watch?v=_T82DJ6IqcQ)
+* [Quora](https://www.quora.com/)
+* [w3schools](https://www.w3schools.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Wikipedia](https://www.wikipedia.org/))
+* [Coding Nepal](https://www.codingnepalweb.com/build-memory-card-game-html-javascript/)
+* [Stack Overflow](https://stackoverflow.com/questions/12206014/css-text-shadow)
+* [Code With Burt](https://www.youtube.com/watch?v=_T82DJ6IqcQ)
+* [Quora](https://www.quora.com/)
+* [w3schools](https://www.w3schools.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Wikipedia](https://www.wikipedia.org/)
+
 ## Deployment
 
 ### The project was deployed using Code Institutes mock terminal for Heroku.
