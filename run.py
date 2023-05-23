@@ -1,77 +1,109 @@
 from flask import Flask, render_template, request, jsonify
 import random
+import time
+from datetime import datetime, timedelta
 from termcolor import colored
 
-app = Flask(__name__)
+# Constants
+WORD_LENGTH = 5
+MAX_ATTEMPTS = 6
+TIMER_DURATION = 180  # 3 minutes in seconds
 
+# Function to generate a random word
 def generate_word():
-    words = [
-        "stove", "grape", "apple", "honey", "flame", "table", "fence", "lucky", "scent", "novel",
-        "chess", "frost", "wrist", "juice", "waste", "virus", "sweep", "beard", "shaft", "shock",
-        "brick", "beast", "sight", "curse", "treat", "charm", "yield", "frown", "horse", "spoil",
-        "bless", "bonus", "queen", "river", "sweat", "braid", "grasp", "blend", "cliff", "crane",
-        "shelf", "doubt", "rider", "bunch", "nurse", "vital", "tiger", "trick", "wool", "cabin",
-        "flash", "sweep", "grill", "drain", "blame", "sting", "curve", "lemon", "spear", "steak",
-        "wrist", "plaza", "prize", "swamp", "glory", "stool", "angel", "ocean", "black", "stair",
-        "shirt", "chair", "craft", "shade", "steel", "roast", "order", "proud", "thief", "broom"
-    ]
-    five_letter_words = [word for word in words if len(word) == 5]
-    return random.choice(five_letter_words)
+    word_list = ["stove", "grape", "apple", "honey", "flame", "table", "fence", "lucky", "scent", "novel",
+                 "chess", "frost", "wrist", "juice", "waste", "virus", "sweep", "beard", "shaft", "shock",
+                 "brick", "beast", "sight", "curse", "treat", "charm", "yield", "frown", "horse", "spoil",
+                 "bless", "bonus", "queen", "river", "sweat", "braid", "grasp", "blend", "cliff", "crane",
+                 "shelf", "doubt", "rider", "bunch", "nurse", "vital", "tiger", "trick", "wool", "cabin",
+                 "flash", "sweep", "grill", "drain", "blame", "sting", "curve", "lemon", "spear", "steak",
+                 "wrist", "plaza", "prize", "swamp", "glory", "stool", "angel", "ocean", "black", "stair",
+                 "shirt", "chair", "craft", "shade", "steel", "roast", "order", "proud", "thief", "broom"]
+    return random.choice(word_list)
 
-def check_guess(word, guess):
-    if len(guess) != len(word):
-        return False
 
+# Function to display the game grid
+def display_grid(grid, elapsed_time, reveal_word):
+    print("    " + " ".join(colored(chr(65+i), 'white') for i in range(WORD_LENGTH)))
+    print("  +" + "---+" * WORD_LENGTH)
+
+    for row in grid:
+        colored_row = []
+        for letter in row:
+            if letter['visible']:
+                colored_row.append(colored(letter['letter'], letter['color'], 'on_grey'))
+            else:
+                colored_row.append(colored("_", 'white', 'on_grey'))
+        print("  | " + " | ".join(colored_row) + " |")
+        print("  +" + "---+" * WORD_LENGTH)
+
+    print()
+    print("Time Elapsed: {} minutes {} seconds".format(elapsed_time.seconds // 60, elapsed_time.seconds % 60))
+
+    if reveal_word:
+        print("The word was:", reveal_word)
+
+
+# Function to check the correctness of the guess
+def check_guess(guess, target_word):
     feedback = []
-    correct_letters = 0
-
-    for i in range(len(word)):
-        if word[i] == guess[i]:
-            feedback.append(colored(word[i], 'green'))
-            correct_letters += 1
-        elif guess[i] in word:
-            feedback.append(colored(guess[i], 'yellow'))
+    for i in range(WORD_LENGTH):
+        if guess[i] == target_word[i]:
+            feedback.append({'letter': guess[i], 'color': 'green', 'visible': True})  # Correct letter in the correct position
+        elif guess[i] in target_word:
+            feedback.append({'letter': guess[i], 'color': 'yellow', 'visible': True})  # Correct letter in the wrong position
         else:
-            feedback.append(colored('_', 'red'))
+            feedback.append({'letter': guess[i], 'color': 'red', 'visible': True})  # Incorrect letter
+    return feedback
 
-    return ' '.join(feedback)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+# Function to play the game
+def play_game():
+    target_word = generate_word()
+    attempts = 0
+    grid = []
+    start_time = datetime.now()
+    end_time = start_time + timedelta(seconds=TIMER_DURATION)
 
-@app.route('/guess', methods=['POST'])
-def guess():
-    guess_input = request.form['guess']
-    correct = check_guess(hidden_word, guess_input)
+    print("Welcome to Wordle!")
+    print("Guess the five-letter word.")
+    print("You have", MAX_ATTEMPTS, "attempts.")
+    print("You have 3 minutes to complete the game.")
 
-    response = {
-        'correct': correct,
-        'feedback': check_guess(hidden_word, guess_input),
-        'attempts': attempts
-    }
+    while attempts < MAX_ATTEMPTS and datetime.now() <= end_time:
+        elapsed_time = datetime.now() - start_time
+        display_grid(grid, elapsed_time, None)
+        guess = input("Enter your guess: ").lower()
 
-    if correct:
-        response['message'] = f"Congratulations! You guessed the word '{hidden_word}' in {6 - attempts + 1} attempts."
-    elif attempts == 1:
-        response['message'] = f"Game over! You did not guess the word. The word was '{hidden_word}'."
+        if len(guess) != WORD_LENGTH:
+            print("Invalid guess. Guess should be", WORD_LENGTH, "letters long.")
+            continue
+
+        feedback = check_guess(guess, target_word)
+        grid.append(feedback)
+
+        if feedback == [{'letter': guess[i], 'color': 'green', 'visible': True} for i in range(WORD_LENGTH)]:
+            elapsed_time = datetime.now() - start_time
+            display_grid(grid, elapsed_time, target_word)
+            print("Congratulations! You guessed the word.")
+            break
+
+        attempts += 1
+
+    elapsed_time = datetime.now() - start_time
+    if attempts == MAX_ATTEMPTS:
+        display_grid(grid, elapsed_time, target_word)
+        print("Sorry, you have used all your attempts.")
+    elif datetime.now() > end_time:
+        display_grid(grid, elapsed_time, target_word)
+        print("Sorry, you ran out of time.")
+
+    play_again = input("Do you want to play again? (yes/no): ")
+    if play_again.lower() == 'yes':
+        play_game()
     else:
-        response['message'] = f"Try again. {attempts - 1} attempts remaining."
+        print("Thank you for playing Wordle!")
 
-    return jsonify(response)
 
-@app.route('/play-again', methods=['POST'])
-def play_again():
-    global hidden_word, attempts
-
-    hidden_word = generate_word()
-    attempts = 6
-
-    return jsonify({'playing': True})
-
-hidden_word = ''
-attempts = 6
-
-if __name__ == '__main__':
-    app.run()
-   
+# Start the game
+play_game()
