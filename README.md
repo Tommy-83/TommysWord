@@ -7,6 +7,16 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 - Python 3.x
 - termcolor package (install using `pip install termcolor`)
 
+## Game Design
+
+* Colours - the main coloristic feature in the game is three colours, Red, Yellow and Green
+* Red indicates that the letter is not part of the word.
+* Yellow that the letter is part of the word but should be placed elswhere.
+* Green indicates that the letter is in correct place.
+
+* Example in a working game:
+* ![Game Colours]()
+
 ## How to Play
 
 1. Clone the repository or download the source code.
