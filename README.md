@@ -118,9 +118,31 @@ The Wordle game was tested to ensure its functionality. The following areas were
 * Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section.
 * Heroku will now deploy the site.
 
+## Cloning repository:
+* Local Clone
+* Log in to GitHub and locate GitHub Repository
+
+* At the top of repository click on Code
+
+* From the dropdown menu under HTTPS copy the link
+
+* Now on the IDE create a directory where you want to make the clone
+
+* Type git clone and paste the link that you copy from step 3.
+
+## Forking repository:
+* By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting 
+ the original repository by using the following steps:
+
+* Log in to GitHub and locate the GitHub Repository
+* At the top of the Repository (not top of page) just above the "Settings" Button on - - the menu, locate the "Fork" Button.
+* You should now have a copy of the original repository in your GitHub account.
+
+
+## Credits
+* Massive Thank You to Ben my tutor for not giving up on me.
 
 
 
 
 
-[def]: /assets/img/wrongLength.png
