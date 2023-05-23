@@ -9,13 +9,16 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 
 ## Game Design
 
-* Colours - the main coloristic feature in the game is three colours, Red, Yellow and Green
+1. Colours - the main coloristic feature in the game is three colours, Red, Yellow and Green
 * Red indicates that the letter is not part of the word.
 * Yellow that the letter is part of the word but should be placed elswhere.
 * Green indicates that the letter is in correct place.
 
 * Example in a working game:
-* ![Game Colours](/workspace/TommysWord/assets/img/colorExplanation.png)
+* ![Game Colours](/assets/img/colorExplanation.png)
+
+2. The game is design to accept only 5 letter guesses, showing the error message if that requirement is not met:
+* ![Length Issue Message](/assets/img/wrongLength.png)
 
 ## How to Play
 
@@ -89,3 +92,6 @@ The Wordle game was tested to ensure its functionality. The following areas were
 
 
 
+
+
+[def]: /assets/img/wrongLength.png
