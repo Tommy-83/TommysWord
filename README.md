@@ -27,6 +27,10 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 
 * ![out of attempts](/assets/img/outOfAttempts.png)
 
+5. If the user will guess the secret word there will be a win message shown, after which the player will be asked if he wants to play again.
+
+* ![Win](/assets/img/winMessage.png)
+
 ## How to Play
 
 1. Clone the repository or download the source code.
