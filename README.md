@@ -15,7 +15,7 @@ Wordle is a word guessing game where the player tries to guess a five-letter wor
 * Green indicates that the letter is in correct place.
 
 * Example in a working game:
-* ![Game Colours](/assets/images/colorExplanation.png)
+* ![Game Colours](/workspace/TommysWord/assets/img/colorExplanation.png)
 
 ## How to Play
 
